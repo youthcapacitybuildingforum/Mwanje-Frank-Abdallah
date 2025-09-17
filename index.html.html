@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mwanje Frank Abdallah — Portfolio | Founder, Speaker, Youth Mentor</title>
+  <meta name="description" content="Mwanje Frank Abdallah — Founder & Executive Director of Youth Capacity Building Network (YCBN). Speaker, youth mentor, Muslim leader from Gomba, Uganda."/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>✦</text></svg>">
+  <style>
+    :root{
+      --bg: #f7fbfd;
+      --card: #ffffff;
+      --muted:#6b7280;
+      --accent1: #0b7285; /* teal-blue */
+      --accent2: #0f766e; /* greenish */
+      --purple: #6d28d9;  /* purple accent */
+      --accent-strong: linear-gradient(135deg,var(--accent1),var(--purple));
+      --glass: rgba(255,255,255,0.75);
+      --max-width: 1100px;
+      --radius: 14px;
+      --shadow: 0 8px 30px rgba(18,38,63,0.08);
+      --heading: 'Segoe UI', Roboto, system-ui, -apple-system, "Helvetica Neue", Arial;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: var(--heading);
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(13,148,136,0.04), transparent),
+                  radial-gradient(800px 400px at 90% 90%, rgba(109,40,217,0.04), transparent),
+                  var(--bg);
+      color:#0f1724;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+
+    .wrap{max-width:var(--max-width);margin:0 auto;padding:28px;}
+
+    /* NAV */
+    header{
+      position:sticky;top:14px;z-index:50;
+      margin-bottom:24px;
+    }
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:16px;background:linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.7));
+      padding:10px 14px;border-radius:16px;box-shadow:var(--shadow);backdrop-filter: blur(6px);
+    }
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+    .logo{
+      width:48px;height:48px;border-radius:10px;
+      background:var(--accent-strong);
+      display:flex;align-items:center;justify-content:center;color:white;font-weight:700;
+      box-shadow:0 6px 18px rgba(109,40,217,0.18);
+    }
+    .brand h1{font-size:1rem;margin:0}
+    nav ul{display:flex;gap:14px;align-items:center;margin:0;padding:0;list-style:none}
+    nav a{color:#052f35;text-decoration:none;padding:8px 12px;border-radius:10px;font-weight:600}
+    nav a:hover{background:rgba(11,114,133,0.06)}
+    .cta-btn{background:var(--purple);color:white;padding:8px 14px;border-radius:10px;text-decoration:none;font-weight:700;}
+    .cta-btn:hover{opacity:0.95}
+
+    /* mobile */
+    .hamburger{display:none;background:transparent;border:0;padding:8px;border-radius:8px}
+    .hamburger svg{display:block}
+
+    @media (max-width:900px){
+      .nav{padding:10px}
+      nav{display:none}
+      .hamburger{display:inline-flex}
+      .mobile-menu{
+        display:none;
+        position:fixed;inset:72px 18px auto 18px;
+        background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.95));
+        border-radius:12px;padding:12px 14px;box-shadow:var(--shadow);z-index:60;
+      }
+      .mobile-menu.open{display:block}
+      .mobile-menu a{display:block;padding:10px 6px;border-radius:8px}
+    }
+
+    /* HERO */
+    .hero{
+      display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;
+      margin:30px 0 48px;padding:34px;border-radius:20px;background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.85));
+      box-shadow:var(--shadow);
+    }
+    .hero .eyebrow{display:inline-block;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,var(--accent1),var(--purple));color:white;font-weight:700;margin-bottom:12px}
+    .hero h2{font-size:2.1rem;margin:6px 0}
+    .hero p.lead{color:var(--muted);margin:10px 0 20px}
+    .hero .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .card{
+      background:var(--card);padding:18px;border-radius:14px;box-shadow:var(--shadow);
+    }
+    .profile{
+      display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center;
+      padding:18px;border-radius:14px;background:linear-gradient(180deg,#fff,rgba(255,255,255,0.96));
+    }
+    .profile img{width:100%;height:320px;object-fit:cover;border-radius:12px}
+    .profile h3{margin:0;font-size:1.15rem}
+    .muted{color:var(--muted);font-size:0.95rem}
+
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr; padding:18px}
+      .profile img{height:260px}
+    }
+
+    /* SECTIONS */
+    section{margin:36px 0;padding:0}
+    .section-head{display:flex;align-items:baseline;gap:12px;margin-bottom:18px}
+    .section-head h3{margin:0;font-size:1.2rem}
+    .grid{display:grid;gap:18px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    .grid.cols-4{grid-template-columns:repeat(4,1fr)}
+    @media (max-width:900px){.grid.cols-3,.grid.cols-4{grid-template-columns:repeat(1,1fr)}.grid.cols-2{grid-template-columns:repeat(1,1fr)}}
+
+    .stat{
+      padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(13,148,136,0.03), rgba(109,40,217,0.03));
+      border:1px solid rgba(13,148,136,0.04)
+    }
+    .achievement{padding:18px;border-radius:12px;background:var(--card);box-shadow:var(--shadow)}
+
+    /* GALLERY */
+    .gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+    .gallery img{width:100%;height:150px;object-fit:cover;border-radius:10px;display:block}
+    @media (max-width:1100px){.gallery{grid-template-columns:repeat(3,1fr)}.gallery img{height:140px}}
+    @media (max-width:700px){.gallery{grid-template-columns:repeat(2,1fr)}.gallery img{height:120px}}
+
+    /* PARTNER / CTA */
+    .partner{
+      display:flex;gap:18px;align-items:center;padding:18px;border-radius:14px;background:linear-gradient(90deg, rgba(11,114,133,0.03), rgba(109,40,217,0.02));
+      border:1px solid rgba(13,148,136,0.04)
+    }
+    .partner .left{flex:1}
+    .partner .right{display:flex;gap:10px;align-items:center}
+
+    /* TESTIMONIAL */
+    .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .testimonial{padding:18px;border-radius:12px;background:var(--card);box-shadow:var(--shadow);font-size:0.98rem}
+    .quote{font-style:italic;color:var(--muted)}
+
+    @media (max-width:900px){.testimonials{grid-template-columns:repeat(1,1fr)}}
+
+    /* CONTACT */
+    .contact-grid{display:grid;grid-template-columns:1fr 420px;gap:20px}
+    @media (max-width:900px){.contact-grid{grid-template-columns:1fr}}
+    form{display:grid;gap:12px}
+    input,textarea,select{padding:12px;border-radius:10px;border:1px solid #e6eef0;background:transparent;outline:none;font-size:1rem}
+    input:focus,textarea:focus{box-shadow:0 4px 14px rgba(13,148,136,0.06);border-color:var(--accent1)}
+    .small{font-size:0.9rem;color:var(--muted)}
+
+    .footer{
+      margin-top:28px;padding:22px;border-radius:12px;background:linear-gradient(180deg,rgba(0,0,0,0.02),transparent);
+      display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;
+    }
+    .socials a{margin-right:10px;text-decoration:none;color:var(--muted);font-weight:700}
+    .tiny{font-size:0.85rem;color:var(--muted)}
+
+    /* modal */
+    .modal-backdrop{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.45);z-index:90}
+    .modal-backdrop.open{display:flex}
+    .modal{background:var(--card);padding:18px;border-radius:12px;max-width:560px;width:calc(100% - 40px);box-shadow:var(--shadow)}
+    .modal h4{margin:0 0 8px}
+    .close-btn{background:transparent;border:0;font-size:1.1rem;padding:8px;border-radius:8px}
+
+    /* utilities */
+    .muted-small{color:var(--muted);font-size:0.9rem}
+    .pill{padding:8px 12px;border-radius:999px;background:linear-gradient(90deg,var(--accent1),var(--purple));color:white;font-weight:700}
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <div class="nav" role="navigation" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Mwanje Frank Abdallah homepage">
+        <div class="logo" aria-hidden="true">MF</div>
+        <div>
+          <h1 style="font-size:14px;margin:0">Mwanje Frank Abdallah</h1>
+          <div class="muted-small" style="margin-top:2px">Founder & Executive Director — YCBN</div>
+        </div>
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#leadership">Leadership</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#partner">Partner</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div style="display:flex;gap:10px;align-items:center">
+        <a class="tiny" href="tel:+256756173796" aria-label="Call Mwanje Frank">+256 756 173796</a>
+        <a class="cta-btn" href="#contact">Hire / Partner</a>
+        <button class="hamburger" aria-label="Open menu" id="hamburger">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="#052f35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+
+    
+
+  <main class="wrap" id="home" tabindex="-1">
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div>
+        <span class="eyebrow">Proud Muslim • Youth Leader</span>
+        <h2 id="hero-heading">Mwanje Frank Abdallah — Founder. Speaker. Youth Empowerment Mentor.</h2>
+        <p class="lead">I lead Youth Capacity Building Network (YCBN), empowering young people across Uganda through mentorship, charitable outreach, leadership training, and faith-centred community building. Former MUSAU President — Makerere University. Bachelor of Social Work.</p>
+
+        <div class="actions">
+          <a class="cta-btn" href="#partner" title="Partner with Frank">Partner With Me</a>
+          <a class="pill" href="#contact" title="Hire Frank">Hire Me — Speaking & Mentorship</a>
+          <a class="muted-small" href="tel:+256756173796" aria-label="Call Mwanje Frank">Call: +256 756 173796</a>
+          <a class="muted-small" href="https://x.com/mwanjefrank" target="_blank" rel="noopener">Follow: @mwanjefrank</a>
+        </div>
+
+        <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+          <div class="card" style="min-width:180px">
+            <div style="font-size:12px;color:var(--muted)">Location</div>
+            <div style="font-weight:800">Kampala, Uganda</div>
+          </div>
+          <div class="card" style="min-width:180px">
+            <div style="font-size:12px;color:var(--muted)">Education</div>
+            <div style="font-weight:800">B.S.W — Makerere University</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="profile" aria-label="Profile card">
+        <img src="https://pbs.twimg.com/profile_images/1839749568809848832/-PzI9LRN_400x400.jpg">
+        <h3>Mwanje Frank Abdallah</h3>
+        <div class="muted">Founder & Executive Director — Youth Capacity Building Network (YCBN)</div>
+        <div style="display:flex;gap:8px;margin-top:8px">
+          <a class="cta-btn" href="#contact">Hire / Book</a>
+          <button class="pill" id="openPartner">Partner</button>
+        </div>
+        <div style="margin-top:10px" class="muted-small">
+          Former President, Makerere University Muslim Students Association (MUSAU). Passionate about youth, faith, and community service.
+        </div>
+      </aside>
+    </section>
+
+    <!-- ABOUT (home section 2) -->
+    <section id="about" aria-labelledby="about-heading">
+      <div class="section-head">
+        <h3 id="about-heading">About Mwanje Frank Abdallah</h3>
+        <div class="muted-small">A concise biography</div>
+      </div>
+
+      <div class="grid cols-2">
+        <div class="achievement">
+          <h4 style="margin-top:0">Biography</h4>
+          <p class="muted-small">
+            Mwanje Frank Abdallah is a proud Muslim and an ardent lover of youth development. Born and raised in Gomba, Uganda, Frank pursued a Bachelor of Social Work at Makerere University where he developed his passion for community service and leadership. As former President of the Makerere University Muslim Students Association (MUSAU), he led student outreach programs, charity initiatives and inter-school faith activities that strengthened community ties and supported vulnerable students.
+          </p>
+          <p class="muted-small">
+            Today, as Founder and Executive Director of Youth Capacity Building Network (YCBN), Frank mentors thousands of young people across Uganda — equipping them with leadership skills, vocational guidance, and moral support centered on faith and service.
+          </p>
+        </div>
+
+        <div class="achievement">
+          <h4 style="margin-top:0">Core Focus Areas</h4>
+          <ul style="margin:8px 0 0 18px;color:var(--muted)">
+            <li>Youth leadership training & mentorship</li>
+            <li>Faith-based community outreach and charity work</li>
+            <li>School-based programs to promote Islamic values and civic responsibility</li>
+            <li>Public speaking & conference engagements</li>
+            <li>Collaborative partnerships with NGOs, faith organizations, and donors</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEADERSHIP & ACHIEVEMENTS (home section 3) -->
+    <section id="leadership" aria-labelledby="leadership-heading">
+      <div class="section-head">
+        <h3 id="leadership-heading">Leadership & Achievements</h3>
+        <div class="muted-small">Selected highlights of service and impact</div>
+      </div>
+
+      <div class="grid cols-3" style="margin-bottom:18px">
+        <div class="stat">
+          <div style="font-size:18px;font-weight:800">Former MUSAU President</div>
+          <div class="muted-small">Led student-body initiatives, coordinated inter-university faith programs and welfare drives.</div>
+        </div>
+        <div class="stat">
+          <div style="font-size:18px;font-weight:800">Founder — YCBN</div>
+          <div class="muted-small">Established Youth Capacity Building Network to train and mentor youth across regions.</div>
+        </div>
+        <div class="stat">
+          <div style="font-size:18px;font-weight:800">Charity & Outreach</div>
+          <div class="muted-small">Organized community food drives, school support programs and health outreach initiatives.</div>
+        </div>
+      </div>
+
+      <div class="grid cols-2">
+        <div class="achievement">
+          <h4 style="margin-top:0">Notable Projects</h4>
+          <ol style="margin-left:18px;color:var(--muted)">
+            <li>School Outreach — promoting education and faith-based values in rural schools.</li>
+            <li>Youth Leadership Bootcamp — training future community leaders in governance & ethics.</li>
+            <li>Community Charity Drives — food distribution & family support during crises.</li>
+          </ol>
+        </div>
+
+        <div class="achievement">
+          <h4 style="margin-top:0">Speaking & Mentorship</h4>
+          <p class="muted-small">Frank has delivered keynote addresses in universities and community forums on leadership, faith, and social responsibility. He is available for speaking engagements, workshops and tailored mentorship programs for schools and youth groups.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY (home section 4) -->
+    <section id="gallery" aria-labelledby="gallery-heading">
+      <div class="section-head">
+        <h3 id="gallery-heading">Gallery</h3>
+        <div class="muted-small">Photos from events, outreach and leadership moments</div>
+      </div>
+
+      <div class="gallery" role="list">
+        <!-- 5 images: replace links with real photos -->
+        <img role="listitem" src="https://pbs.twimg.com/media/G0i3Jv7XoAAhQrY?format=jpg&name=small">
+        <img role="listitem" src="https://pbs.twimg.com/media/G0jMSTMXAAASJIW?format=jpg&name=small" alt="Speaking at an event - representative" loading="lazy">
+        <img role="listitem" src="https://pbs.twimg.com/media/GaTwmlOXwAALZxJ?format=jpg&name=small" alt="Group of youth during training - representative" loading="lazy">
+        <img role="listitem" src="https://pbs.twimg.com/media/GYgfjeqWAAA6YYk?format=jpg&name=small" alt="Volunteer charity drive - representative" loading="lazy">
+        <img role="listitem" src="https://pbs.twimg.com/media/GaT0Vj2XwAAfw_g?format=jpg&name=small" alt="Leadership workshop - representative" loading="lazy">
+      </div>
+
+      <p class="muted-small" style="margin-top:12px">Tip: swap these images with your own event photos for authentic representation.</p>
+    </section>
+
+    <!-- PARTNER & HIRE (home section 5) -->
+    <section id="partner" aria-labelledby="partner-heading">
+      <div class="section-head">
+        <h3 id="partner-heading">Partner & Hire</h3>
+        <div class="muted-small">Work with Mwanje Frank to reach more youth</div>
+      </div>
+
+      <div class="partner">
+        <div class="left">
+          <h4 style="margin:0">Collaborations & Opportunities</h4>
+          <p class="muted-small">
+            YCBN partners with NGOs, schools, faith groups, and donors to run training, mentorship, and community outreach programs. Engage Frank for:
+          </p>
+          <ul style="color:var(--muted);margin-left:18px">
+            <li>Keynote speeches & motivational talks</li>
+            <li>Leadership workshops & school trainings</li>
+            <li>Mental health & social work guidance for youth groups</li>
+            <li>Joint charity projects and resource mobilization</li>
+          </ul>
+        </div>
+
+        <div class="right">
+          <div style="text-align:right">
+            <div style="font-weight:800">Ready to partner?</div>
+            <div class="muted-small">Call: +256 756 173796</div>
+            <div style="margin-top:10px">
+              <a class="cta-btn" id="partnerCTA">Partner With Frank</a>
+            </div>
+            <div style="margin-top:12px" class="muted-small">Or email via the contact form.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS (home section 6) -->
+    <section id="testimonials" aria-labelledby="testimonials-heading">
+      <div class="section-head">
+        <h3 id="testimonials-heading">Testimonials & Impact Stories</h3>
+        <div class="muted-small">Voices of the youth and partners</div>
+      </div>
+
+      <div class="testimonials">
+        <div class="testimonial">
+          <div style="font-weight:700">"Frank changed my life."</div>
+          <div class="quote">"After his mentorship I regained direction and now lead a student initiative that feeds 50 families monthly."</div>
+          <div class="muted-small" style="margin-top:8px">— Amina, Mentee</div>
+        </div>
+
+        <div class="testimonial">
+          <div style="font-weight:700">"A leader of prayer and action."</div>
+          <div class="quote">"His leadership at MUSAU inspired many students to join community service and pursue education."</div>
+          <div class="muted-small" style="margin-top:8px">— University Partner</div>
+        </div>
+
+        <div class="testimonial">
+          <div style="font-weight:700">"Reliable and humble."</div>
+          <div class="quote">"Frank works respectfully with partners to produce measurable impact in communities."</div>
+          <div class="muted-small" style="margin-top:8px">— Project Sponsor</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT (page 3) -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <div class="section-head">
+        <h3 id="contact-heading">Contact & Booking</h3>
+        <div class="muted-small">Let's plan your next event, partnership or mentorship program</div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="card">
+          <h4 style="margin-top:0">Get in touch</h4>
+          <p class="muted-small">Use the form to request speaking engagements, partnership proposals, or mentorship programs. Provide clear details and we will respond promptly by phone or X/Instagram handle.</p>
+
+          <form id="contactForm" novalidate>
+            <label class="small">Full name <input type="text" name="name" id="name" required placeholder="Your full name"></label>
+            <label class="small">Email <input type="email" name="email" id="email" required placeholder="you@example.com"></label>
+            <label class="small">Phone <input type="tel" name="phone" id="phone" placeholder="+256..." required></label>
+            <label class="small">Type of request
+              <select id="reqType" name="type" required>
+                <option value="">Select</option>
+                <option>Speaking Engagement</option>
+                <option>Partnership / NGO Collaboration</option>
+                <option>Mentorship / Coaching</option>
+                <option>Media / Interview</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label class="small">Message <textarea id="message" name="message" rows="5" placeholder="Describe event, audience size, proposed date, location and budget (if any)"></textarea></label>
+
+            <div style="display:flex;gap:10px;align-items:center">
+              <button type="submit" class="cta-btn">Send Request</button>
+              <button type="button" class="pill" id="callNow">Call Now</button>
+              <div class="muted-small" style="margin-left:10px">or call <strong>+256 756 173796</strong></div>
+            </div>
+
+            <div id="formMessage" class="muted-small" style="margin-top:12px;display:none"></div>
+          </form>
+        </div>
+
+        <aside class="card">
+          <h4 style="margin-top:0">Contact Details</h4>
+          <p class="muted-small"><strong>Phone:</strong> <a href="tel:+256756173796">+256 756 173796</a></p>
+          <p class="muted-small"><strong>Social:</strong> <a href="https://x.com/mwanjefrank" target="_blank" rel="noopener">@mwanjefrank</a></p>
+          <p class="muted-small"><strong>Location:</strong> Gomba, Uganda</p>
+
+          <hr style="border:none;height:1px;background:rgba(0,0,0,0.06);margin:14px 0;border-radius:2px">
+
+          <h4 style="margin:0 0 8px 0">Quick Facts</h4>
+          <ul style="color:var(--muted);margin-left:18px">
+            <li>Founder & Executive Director — Youth Capacity Building Network (YCBN)</li>
+            <li>Former President — MUSAU, Makerere University</li>
+            <li>Bachelor of Social Work — Makerere University</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer wrap" role="contentinfo">
+      <div>
+        <div style="font-weight:800">Mwanje Frank Abdallah</div>
+        <div class="tiny">Founder & Executive Director — Youth Capacity Building Network (YCBN)</div>
+      </div>
+
+      <div class="socials">
+        <a href="https://x.com/mwanjefrank" target="_blank" rel="noopener">@mwanjefrank</a>
+        <a href="tel:+256756173796">+256 756 173796</a>
+      </div>
+
+      <div class="tiny">© <span id="year"></span> Mwanje Frank Abdallah — All rights reserved</div>
+    </footer>
+  </main>
+
+  <!-- Modal (Partner) -->
+  <div class="modal-backdrop" id="modal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <h4 id="modal-title">Partner With Mwanje Frank</h4>
+        <button class="close-btn" id="closeModal" aria-label="Close dialog">✕</button>
+      </div>
+      <p class="muted-small">Complete the short form below and the team will reach out to discuss partnership details and next steps.</p>
+
+      <form id="partnerForm" style="margin-top:12px" novalidate>
+        <label class="small">Organization / Your name <input type="text" id="pname" required placeholder="Organization or your name"></label>
+        <label class="small">Email <input type="email" id="pemail" required placeholder="you@org.com"></label>
+        <label class="small">Phone <input type="tel" id="pphone" placeholder="+256..." required></label>
+        <label class="small">Proposal summary <textarea id="pprop" rows="4" placeholder="Briefly describe your proposed partnership"></textarea></label>
+
+        <div style="display:flex;gap:10px;margin-top:10px">
+          <button class="cta-btn" type="submit">Submit Proposal</button>
+          <button class="close-btn" type="button" id="cancelPartner">Cancel</button>
+        </div>
+
+        <div id="partnerMsg" class="muted-small" style="margin-top:12px;display:none"></div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // small helpers
+    const $ = s => document.querySelector(s);
+    const $$ = s => Array.from(document.querySelectorAll(s));
+
+    // mobile menu toggle
+    const hamburger = $('#hamburger');
+    const mobileMenu = $('#mobileMenu');
+    hamburger.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      mobileMenu.setAttribute('aria-hidden', !open);
+      hamburger.setAttribute('aria-expanded', open);
+    });
+
+    // smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(e){
+        const href = this.getAttribute('href');
+        if(!href || href === '#') return;
+        const target = document.querySelector(href);
+        if(target){
+          e.preventDefault();
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+          // close mobile menu if open
+          if(mobileMenu.classList.contains('open')) {
+            mobileMenu.classList.remove('open');
+            mobileMenu.setAttribute('aria-hidden','true');
+          }
+        }
+      });
+    });
+
+    // update year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Contact form handling (client-side only)
+    const contactForm = $('#contactForm');
+    const formMessage = $('#formMessage');
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // basic validation
+      const name = $('#name').value.trim();
+      const email = $('#email').value.trim();
+      const phone = $('#phone').value.trim();
+      const type = $('#reqType').value;
+      const message = $('#message').value.trim();
+
+      if(!name || !email || !phone || !type){
+        formMessage.style.display = 'block';
+        formMessage.style.color = '#c2410c';
+        formMessage.textContent = 'Please complete name, email, phone and type of request.';
+        return;
+      }
+
+      // Simulate submission (replace with real backend endpoint)
+      formMessage.style.display = 'block';
+      formMessage.style.color = '#064e3b';
+      formMessage.textContent = 'Sending request...';
+
+      setTimeout(() => {
+        formMessage.style.color = '#064e3b';
+        formMessage.textContent = 'Thank you — your request was submitted. We will contact you at ' + email + ' or ' + phone + ' soon.';
+        contactForm.reset();
+      }, 900);
+    });
+
+    // Call Now button - opens phone dialer
+    $('#callNow').addEventListener('click', ()=>{
+      window.location.href = 'tel:+256756173796';
+    });
+
+    // Modal partner form logic
+    const openPartner = $('#openPartner');
+    const partnerCTA = $('#partnerCTA');
+    const modal = $('#modal');
+    const closeModal = $('#closeModal');
+    const cancelPartner = $('#cancelPartner');
+
+    function openModal(){
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModalFn(){
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+      // reset partner form messages
+      $('#partnerMsg').style.display = 'none';
+    }
+
+    [openPartner, partnerCTA].forEach(btn=>{
+      btn.addEventListener('click', (e)=>{
+        e.preventDefault();
+        openModal();
+      });
+    });
+
+    [closeModal, cancelPartner].forEach(btn=>{
+      btn.addEventListener('click', closeModalFn);
+    });
+
+    // close modal on backdrop click
+    modal.addEventListener('click', (e)=>{
+      if(e.target === modal) closeModalFn();
+    });
+
+    // partner form submission
+    const partnerForm = $('#partnerForm');
+    const partnerMsg = $('#partnerMsg');
+    partnerForm.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const pname = $('#pname').value.trim();
+      const pemail = $('#pemail').value.trim();
+      const pphone = $('#pphone').value.trim();
+
+      if(!pname || !pemail || !pphone){
+        partnerMsg.style.display = 'block';
+        partnerMsg.style.color = '#c2410c';
+        partnerMsg.textContent = 'Please complete name, email and phone.';
+        return;
+      }
+
+      partnerMsg.style.display = 'block';
+      partnerMsg.style.color = '#064e3b';
+      partnerMsg.textContent = 'Submitting proposal...';
+
+      setTimeout(()=>{
+        partnerMsg.style.color = '#064e3b';
+        partnerMsg.textContent = 'Thank you. Your partnership proposal has been received. Someone will be in touch at ' + pemail + '.';
+        partnerForm.reset();
+      }, 900);
+    });
+
+    // accessibility: close mobile menu or modal on escape
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'Escape'){
+        if(mobileMenu.classList.contains('open')) { mobileMenu.classList.remove('open'); mobileMenu.setAttribute('aria-hidden','true'); }
+        if(modal.classList.contains('open')) closeModalFn();
+      }
+    });
+
+    // Lazy load gallery images with small intersection observer
+    document.addEventListener('DOMContentLoaded', function(){
+      const imgs = document.querySelectorAll('.gallery img');
+      if('IntersectionObserver' in window){
+        const obs = new IntersectionObserver((entries, obsr) => {
+          entries.forEach(entry=>{
+            if(entry.isIntersecting){
+              const img = entry.target;
+              if(img.dataset.src){ img.src = img.dataset.src; }
+              obsr.unobserve(img);
+            }
+          });
+        }, {rootMargin: "50px 0px"});
+        imgs.forEach(i => obs.observe(i));
+      }
+    });
+  </script>
+</body>
+</html>
+4:04 PM 9/17/20254:04 PM 9/17/20254:04 PM 9/17/20254:04 PM 9/17/2025
