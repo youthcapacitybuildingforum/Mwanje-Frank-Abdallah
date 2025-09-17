@@ -1,0 +1,331 @@
+/* General Styling & Fonts */
+:root {
+    --primary-blue: #005A8D;
+    --secondary-green: #3A8E68;
+    --background-white: #F5F5F5;
+    --text-gray: #4A4A4A;
+    --light-gray: #CCCCCC;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--background-white);
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary-blue);
+    font-weight: 700;
+}
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; text-align: center; margin-bottom: 1em; }
+h3 { font-size: 1.5em; }
+
+section {
+    padding: 4em 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-gray);
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-blue);
+}
+
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 4px 5px rgba(0,0,0,0.1);
+        flex-direction: column;
+        text-align: center;
+        padding: 1em 0;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .nav-links ul {
+        flex-direction: column;
+        gap: 1em;
+    }
+    .hamburger-menu {
+        display: block;
+    }
+}
+
+/* Hero Section */
+.hero-section {
+    padding-top: 10rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('https://via.placeholder.com/1920x1080/005A8D/F5F5F5?text=Mwanje+Frank+Abdallah') no-repeat center center/cover;
+    color: white;
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 90, 141, 0.7);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+}
+
+.hero-content h1, .hero-content h3, .hero-content p {
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 0.2em;
+}
+
+.hero-content h3 {
+    font-size: 1.8em;
+    font-weight: 400;
+    margin-top: 0;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+}
+
+.cta-buttons {
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.btn {
+    padding: 0.8em 2em;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.primary-btn {
+    background-color: var(--primary-blue);
+    color: white;
+    border: 2px solid var(--primary-blue);
+}
+
+.secondary-btn {
+    background-color: var(--secondary-green);
+    color: white;
+    border: 2px solid var(--secondary-green);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+/* Sections */
+.about-section, .partner-section {
+    text-align: center;
+}
+
+.about-content p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2em;
+    text-align: center;
+}
+
+.achievement-card {
+    background-color: white;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.achievement-card i {
+    font-size: 3em;
+    color: var(--secondary-green);
+    margin-bottom: 0.5em;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1em;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+}
+
+.testimonials-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+}
+
+.testimonial-card {
+    max-width: 500px;
+    background-color: white;
+    padding: 2em;
+    border-left: 5px solid var(--secondary-green);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Contact Form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    max-width: 600px;
+    margin: 2em auto;
+}
+
+.contact-form label {
+    font-weight: bold;
+    color: var(--primary-blue);
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 0.8em;
+    border: 1px solid var(--light-gray);
+    border-radius: 5px;
+}
+
+.contact-form button {
+    cursor: pointer;
+}
+
+.contact-info {
+    text-align: center;
+    margin-top: 2em;
+}
+
+.contact-info p {
+    margin: 0.5em 0;
+}
+
+.social-icons {
+    margin-top: 1em;
+}
+
+.social-icons a {
+    color: var(--primary-blue);
+    font-size: 1.5em;
+    margin: 0 0.5em;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--secondary-green);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary-blue);
+    color: white;
+    text-align: center;
+    padding: 2em 5%;
+}
+
+.footer-content p {
+    margin: 0.5em 0;
+}
+
+/* Other Pages */
+.page-content {
+    padding-top: 6em;
+}
+
+.about-page-section, .contact-page-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2em;
+}
+
+.about-page-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.about-page-section ul li {
+    margin-bottom: 1em;
+}
